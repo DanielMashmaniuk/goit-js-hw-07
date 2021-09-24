@@ -1,8 +1,9 @@
-const range = document.querySelector('#font-size-control');
-const text = document.querySelector('#text');
-text.style.fontSize = `${range.value}px`;
+const buttonIncrement = document.querySelector('[data-action="increment"]');
+const buttonDecrement = document.querySelector('[data-action="decrement"]');
+const counterValue = document.querySelector("#value");
 
-range.addEventListener('input',(event)=>{
-const valueOfRange = event.currentTarget.value;
-text.style.fontSize = `${valueOfRange}px`;
-});
+const increment = ()=> counterValue.textContent++;
+const decrement = ()=> counterValue.textContent--;
+
+buttonIncrement.addEventListener("click", increment);
+buttonDecrement.addEventListener("click", decrement);
